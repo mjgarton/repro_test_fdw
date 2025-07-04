@@ -1,0 +1,4 @@
+comment = 'Reprotest foreign data wrapper'
+default_version = '@CARGO_VERSION@'
+relocatable = false
+superuser = false
