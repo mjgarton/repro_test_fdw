@@ -23,8 +23,11 @@ create server eqserver1 foreign data wrapper repro_test;
 -- create table
 create foreign table "Customer" ("id" int,"CustAccountNo" text) server "eqserver1" options (table 'Customer', rowid_column 'id');
 
+drop role if exists user1;
+create role user1 with superuser login password 'password';
+
 ```
 
-3. Run the example client to reproduce the error.
+3. Run the example Rust or Go client program to reproduce the error.
 
 4. Check the postgresql server logs
