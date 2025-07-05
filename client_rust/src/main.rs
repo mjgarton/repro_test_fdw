@@ -25,7 +25,7 @@ async fn do_main() -> Result<(), Error> {
         }
     });
 
-    let prepared = client.prepare(r#"insert into "Customer" ("CustAccountNo") values($1);"#).await?;
+    let prepared = client.prepare(r#"insert into customer (account_number) values($1);"#).await?;
 
     for i in 0..100 {
         let account_number = format!("C0X{:04}", i + 1);

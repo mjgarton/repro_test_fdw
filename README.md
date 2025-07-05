@@ -9,20 +9,16 @@ This is a miminal foreign data wrapper and test code showing how to reproduce a 
 2. Create the extension, foreign data wrapper and related objects:
 
 ```sql
--- (re)create extension
 drop extension if exists repro_test_fdw cascade;
 create extension repro_test_fdw;
 
--- create foreign data wrapper
 create foreign data wrapper repro_test
   handler repro_test_fdw_handler
   validator repro_test_fdw_validator;
 
--- create server and specify custom options
-create server eqserver1 foreign data wrapper repro_test;
+create server server1 foreign data wrapper repro_test;
 
--- create table
-create foreign table "Customer" ("id" int,"CustAccountNo" text) server "eqserver1" options (table 'Customer', rowid_column 'id');
+create foreign table "customer" ("id" int,"account_number" text) server "server1" options (table 'customer', rowid_column 'id');
 
 drop role if exists user1;
 create role user1 with superuser login password 'password';
