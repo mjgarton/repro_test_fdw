@@ -3,7 +3,7 @@
 
 ## Running
 
-1. Build and start with `cargo pgrx run`
+1. Build and run the foreign data wrapper in directory `repro_test_fdw` with `cargo pgrx run`
 
 2. Create the extension, foreign data wrapper and related objects:
 
@@ -25,3 +25,6 @@ create foreign table "Customer" ("id" int,"CustAccountNo" text) server "eqserver
 
 ```
 
+3. Run the example client to reproduce the error.
+
+4. Check the postgresql server logs
