@@ -1,5 +1,6 @@
 # Repro test Foreign Data Wrapper
 
+This is a miminal foreign data wrapper and test code showing how to reproduce a potential bug.
 
 ## Running
 
